@@ -3,23 +3,767 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tarjeta protegida</title>
-  <link rel="stylesheet" href="estilos.css" />
-  <script>
-    const clave = prompt("Introduce la contraseña para ver la tarjeta:");
-    const claveCorrecta = "miClave123"; // 🔒 Cambia esta contraseña
+  <title>🎂 Feliz Cumpleaños</title>
+  
+  <!-- Preconexión para optimizar carga de fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Fuentes Google optimizadas -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:wght@300;400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Meta tags para mejor SEO y rendimiento -->
+  <meta name="description" content="Celebración de cumpleaños con tema espacial - ¡Feliz Cumpleaños!">
+  <meta name="theme-color" content="#00ff88">
+  <meta name="robots" content="noindex, nofollow">
+  
+  <style>width, initial-scale=1.0" />
+  <title>🎂 Feliz Cumpleaños</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    if (clave !== claveCorrecta) {
-      document.body.innerHTML = "<h2>Acceso denegado</h2><p>Contraseña incorrecta.</p>";
+    body {
+      background: radial-gradient(ellipse at center, #1a1a2e 0%, #16213e 25%, #0f0f1e 50%, #000000 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Capa de nebulosas de fondo */
+    .nebula {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background: 
+        radial-gradient(ellipse 800px 400px at 20% 30%, rgba(147, 39, 143, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse 600px 300px at 80% 70%, rgba(57, 73, 171, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse 400px 600px at 60% 20%, rgba(0, 255, 136, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 500px 200px at 30% 80%, rgba(255, 51, 102, 0.1) 0%, transparent 50%);
+      animation: nebulaDrift 20s ease-in-out infinite alternate;
+    }
+
+    @keyframes nebulaDrift {
+      0% { transform: translateX(-20px) translateY(-10px); }
+      100% { transform: translateX(20px) translateY(10px); }
+    }
+
+    /* Estrellas mejoradas */
+    .stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    .star {
+      position: absolute;
+      border-radius: 50%;
+      animation: twinkle 3s infinite;
+    }
+
+    .star-small {
+      width: 2px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+      animation-duration: 4s;
+    }
+
+    .star-medium {
+      width: 4px;
+      height: 4px;
+      background: #fff;
+      box-shadow: 0 0 8px #fff, 0 0 16px rgba(255, 255, 255, 0.3);
+      animation-duration: 3s;
+    }
+
+    .star-large {
+      width: 6px;
+      height: 6px;
+      background: #00ff88;
+      box-shadow: 0 0 12px #00ff88, 0 0 24px #00ff88, 0 0 36px rgba(0, 255, 136, 0.2);
+      animation-duration: 2s;
+    }
+
+    .star-giant {
+      width: 8px;
+      height: 8px;
+      background: #88aaff;
+      box-shadow: 0 0 16px #88aaff, 0 0 32px #88aaff, 0 0 48px rgba(136, 170, 255, 0.3);
+      animation-duration: 5s;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+
+    /* Planetas decorativos */
+    .planets {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+    }
+
+    .planet {
+      position: absolute;
+      border-radius: 50%;
+      animation: planetOrbit 30s linear infinite;
+    }
+
+    .planet1 {
+      width: 40px;
+      height: 40px;
+      background: radial-gradient(circle at 30% 30%, #ff6b6b, #cc5a5a);
+      top: 10%;
+      right: 5%;
+      animation-duration: 25s;
+      box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
+    }
+
+    .planet2 {
+      width: 30px;
+      height: 30px;
+      background: radial-gradient(circle at 30% 30%, #4ecdc4, #45b7b8);
+      bottom: 15%;
+      left: 8%;
+      animation-duration: 35s;
+      animation-direction: reverse;
+      box-shadow: 0 0 15px rgba(78, 205, 196, 0.4);
+    }
+
+    .planet3 {
+      width: 25px;
+      height: 25px;
+      background: radial-gradient(circle at 30% 30%, #f9ca24, #f0932b);
+      top: 20%;
+      left: 10%;
+      animation-duration: 40s;
+      box-shadow: 0 0 12px rgba(249, 202, 36, 0.3);
+    }
+
+    @keyframes planetOrbit {
+      0% { transform: rotate(0deg) translateX(20px) rotate(0deg); }
+      100% { transform: rotate(360deg) translateX(20px) rotate(-360deg); }
+    }
+
+    /* Partículas cósmicas */
+    .cosmic-dust {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    .dust-particle {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      animation: floatDust 15s linear infinite;
+    }
+
+    @keyframes floatDust {
+      0% { 
+        transform: translateY(100vh) translateX(0px);
+        opacity: 0;
+      }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { 
+        transform: translateY(-10vh) translateX(50px);
+        opacity: 0;
+      }
+    }
+
+    /* Cometas ocasionales */
+    .comet {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: #fff;
+      border-radius: 50%;
+      z-index: 4;
+      animation: cometFly 8s linear infinite;
+      opacity: 0;
+    }
+
+    .comet::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -50px;
+      width: 50px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.8));
+      animation: cometTail 8s linear infinite;
+    }
+
+    @keyframes cometFly {
+      0% { 
+        top: -5%; 
+        right: -5%; 
+        opacity: 0;
+      }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { 
+        top: 105%; 
+        right: 105%; 
+        opacity: 0;
+      }
+    }
+
+    @keyframes cometTail {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    /* Estrella fugaz grande */
+    .estrella-fugaz {
+      position: absolute;
+      top: 30%;
+      left: -300px;
+      width: 12px;
+      height: 12px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 20px 10px white;
+      animation: cruzar 3s ease-out infinite;
+      z-index: 4;
+    }
+
+    @keyframes cruzar {
+      0% {
+        transform: translateX(0) translateY(0) rotate(45deg);
+        opacity: 1;
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(1200px) translateY(500px) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+
+
+    .container {
+      text-align: center;
+      z-index: 10;
+      position: relative;
+    }
+
+    .title {
+      font-size: 3rem;
+      color: #00ff88;
+      text-shadow: 
+        0 0 10px #00ff88, 
+        0 0 20px #00ff88, 
+        0 0 40px #00ff88,
+        0 0 80px #00ff88;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeInTitle 3s ease-in-out 1s forwards;
+    }
+
+    @keyframes fadeInTitle {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+    }
+
+    .cake-container {
+      position: relative;
+      width: 600px;
+      height: 400px;
+      margin: 0 auto;
+      filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.3));
+    }
+
+    .cake-svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .neon-line {
+      stroke: #00ff88;
+      stroke-width: 3;
+      fill: none;
+      filter: drop-shadow(0 0 8px #00ff88);
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+    }
+
+    .cake-base {
+      animation: drawLine 2s ease-in-out 2s forwards;
+    }
+
+    .cake-layer1 {
+      animation: drawLine 1.5s ease-in-out 3s forwards;
+    }
+
+    .cake-layer2 {
+      animation: drawLine 1.5s ease-in-out 4s forwards;
+    }
+
+    .cake-top {
+      animation: drawLine 1s ease-in-out 5s forwards;
+    }
+
+    .candle {
+      animation: drawLine 0.8s ease-in-out forwards;
+    }
+
+    .candle1 { animation-delay: 6s; }
+    .candle2 { animation-delay: 6.3s; }
+    .candle3 { animation-delay: 6.6s; }
+    .candle4 { animation-delay: 6.9s; }
+
+    .string-neon {
+      animation: stringFloat 2.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes stringFloat {
+      0% { 
+        transform: translateX(0px) translateY(0px); 
+        filter: drop-shadow(0 0 8px currentColor);
+      }
+      50% { 
+        transform: translateX(1px) translateY(-2px); 
+        filter: drop-shadow(0 0 12px currentColor);
+      }
+      100% { 
+        transform: translateX(-1px) translateY(1px); 
+        filter: drop-shadow(0 0 8px currentColor);
+      }
+    }
+
+    .balloon {
+      animation: drawLine 1.5s ease-in-out forwards, balloonFloat 3s ease-in-out infinite;
+    }
+
+    .balloon1 { 
+      animation-delay: 1s, 1s; 
+      filter: drop-shadow(0 0 10px #ff00ff);
+    }
+    .balloon2 { 
+      animation-delay: 1.3s, 1.3s; 
+      filter: drop-shadow(0 0 10px #00ffff);
+    }
+    .balloon3 { 
+      animation-delay: 1.6s, 1.6s; 
+      filter: drop-shadow(0 0 10px #ffff00);
+    }
+    .balloon4 { 
+      animation-delay: 1.9s, 1.9s; 
+      filter: drop-shadow(0 0 10px #00ff88);
+    }
+    .balloon5 { 
+      animation-delay: 2.2s, 2.2s; 
+      filter: drop-shadow(0 0 10px #ff3366);
+    }
+    .balloon6 { 
+      animation-delay: 2.5s, 2.5s; 
+      filter: drop-shadow(0 0 10px #9966ff);
+    }
+    .balloon7 { 
+      animation-delay: 2.8s, 2.8s; 
+      filter: drop-shadow(0 0 10px #00ffaa);
+    }
+    .balloon8 { 
+      animation-delay: 3.1s, 3.1s; 
+      filter: drop-shadow(0 0 10px #ffaa00);
+    }
+
+    .balloon-highlight {
+      opacity: 0;
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+
+    .balloon1 .balloon-highlight { animation-delay: 2s; }
+    .balloon2 .balloon-highlight { animation-delay: 2.3s; }
+    .balloon3 .balloon-highlight { animation-delay: 2.6s; }
+    .balloon4 .balloon-highlight { animation-delay: 2.9s; }
+    .balloon5 .balloon-highlight { animation-delay: 3.2s; }
+    .balloon6 .balloon-highlight { animation-delay: 3.5s; }
+    .balloon7 .balloon-highlight { animation-delay: 3.8s; }
+    .balloon8 .balloon-highlight { animation-delay: 4.1s; }
+
+    @keyframes balloonFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 0.3; }
+    }
+
+    .candle-body {
+      opacity: 0;
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+
+    .candle1 .candle-body { animation-delay: 6.5s; }
+    .candle2 .candle-body { animation-delay: 6.8s; }
+    .candle3 .candle-body { animation-delay: 7.1s; }
+    .candle4 .candle-body { animation-delay: 7.4s; }
+
+    .decoration {
+      animation: drawLine 1s ease-in-out forwards;
+      animation-delay: 5.5s;
+      filter: drop-shadow(0 0 5px #ff0066);
+    }
+
+    .flame {
+      fill: #ff6b35;
+      opacity: 0;
+      animation: flameAppear 0.3s ease-in-out forwards;
+    }
+
+    .flame1 { animation-delay: 7.5s, 7.5s; }
+    .flame2 { animation-delay: 7.8s, 7.8s; }
+    .flame3 { animation-delay: 8.1s, 8.1s; }
+    .flame4 { animation-delay: 8.4s, 8.4s; }
+
+    @keyframes drawLine {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes flameAppear {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .message {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      color: #00ff88;
+      text-shadow: 
+        0 0 10px #00ff88,
+        0 0 20px #00ff88;
+      opacity: 0;
+      animation: fadeInMessage 1s ease-in-out 9.5s forwards;
+    }
+
+    @keyframes fadeInMessage {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+    }
+
+    .sparkles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #00ff88;
+      border-radius: 50%;
+      opacity: 0;
+      animation: sparkleAnim 3s infinite;
+    }
+
+    @keyframes sparkleAnim {
+      0%, 100% { 
+        opacity: 0; 
+        transform: scale(0) rotate(0deg); 
+      }
+      50% { 
+        opacity: 1; 
+        transform: scale(1) rotate(180deg); 
+      }
+    }
+
+    .access-denied {
+      text-align: center;
+      color: #ff4757;
+      font-size: 2rem;
+      text-shadow: 0 0 20px #ff4757;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const clave = prompt("🎂 Introduce la contraseña para ver la sorpresa de cumpleaños:");
+      const claveCorrecta = "felizCumple2025"; // 🔒 Cambia esta contraseña
+
+      if (clave !== claveCorrecta) {
+        document.body.innerHTML = `
+          <div class="access-denied">
+            <h2>🚫 Acceso denegado</h2>
+            <p>Contraseña incorrecta.</p>
+            <p style="font-size: 1rem; margin-top: 1rem;">Pista: felizCumple2025 😉</p>
+          </div>
+        `;
+        return;
+      }
+
+      // Crear elementos del universo
+      createStars();
+      createCosmicDust();
+      createComets();
+      
+      // Crear chispas después de que aparezcan las llamas
+      setTimeout(createSparkles, 9000);
+    });
+
+    function createStars() {
+      const starsContainer = document.querySelector('.stars');
+      
+      // Estrellas pequeñas (menos numerosas pero más grandes)
+      for (let i = 0; i < 35; i++) {
+        const star = document.createElement('div');
+        star.className = 'star star-small';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.animationDelay = Math.random() * 4 + 's';
+        starsContainer.appendChild(star);
+      }
+      
+      // Estrellas medianas (más prominentes)
+      for (let i = 0; i < 25; i++) {
+        const star = document.createElement('div');
+        star.className = 'star star-medium';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.animationDelay = Math.random() * 3 + 's';
+        starsContainer.appendChild(star);
+      }
+      
+      // Estrellas grandes (muy visibles)
+      for (let i = 0; i < 20; i++) {
+        const star = document.createElement('div');
+        star.className = 'star star-large';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.animationDelay = Math.random() * 2 + 's';
+        starsContainer.appendChild(star);
+      }
+      
+      // Estrellas gigantes (súper prominentes)
+      for (let i = 0; i < 10; i++) {
+        const star = document.createElement('div');
+        star.className = 'star star-giant';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.animationDelay = Math.random() * 5 + 's';
+        starsContainer.appendChild(star);
+      }
+    }
+
+    function createCosmicDust() {
+      const dustContainer = document.querySelector('.cosmic-dust');
+      for (let i = 0; i < 30; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'dust-particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 15 + 's';
+        particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+        dustContainer.appendChild(particle);
+      }
+    }
+
+    function createComets() {
+      function addComet() {
+        const comet = document.createElement('div');
+        comet.className = 'comet';
+        comet.style.top = Math.random() * 50 + '%';
+        comet.style.right = '-10px';
+        document.body.appendChild(comet);
+        
+        setTimeout(() => {
+          comet.remove();
+        }, 8000);
+      }
+      
+      // Crear cometa inicial
+      setTimeout(addComet, 3000);
+      
+      // Crear cometas periódicamente
+      setInterval(addComet, 15000 + Math.random() * 10000);
+    }
+
+    function createSparkles() {
+      const sparklesContainer = document.querySelector('.sparkles');
+      for (let i = 0; i < 20; i++) {
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        sparkle.style.left = Math.random() * 100 + '%';
+        sparkle.style.top = Math.random() * 100 + '%';
+        sparkle.style.animationDelay = Math.random() * 3 + 's';
+        sparklesContainer.appendChild(sparkle);
+      }
     }
   </script>
 </head>
 <body>
-  <div class="tarjeta">
-    <img src="https://via.placeholder.com/300x200" alt="Imagen principal" class="imagen" />
-    <h1>¡Hola!</h1>
-    <p>Esta es una tarjeta especial protegida por contraseña.</p>
-    <img src="https://via.placeholder.com/100x100" alt="Decoración" class="decoracion" />
+  <div class="nebula"></div>
+  <div class="stars"></div>
+  <div class="cosmic-dust"></div>
+  <div class="planets">
+    <div class="planet planet1"></div>
+    <div class="planet planet2"></div>
+    <div class="planet planet3"></div>
+  </div>
+  <div class="estrella-fugaz"></div>
+  <div class="sparkles"></div>
+  
+  <div class="container">
+    <h1 class="title">🎉 ¡FELIZ CUMPLEAÑOS! 🎉</h1>
+    
+    <div class="cake-container">
+      <svg class="cake-svg" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+        
+        <!-- CUERDAS ONDULADAS CON EFECTOS NEÓN Y MOVIMIENTO -->
+        <path class="string-neon" d="M80 145 Q76 160 84 175 Q78 190 82 205 Q76 220 80 235 Q84 248 80 250" stroke="#ff00ff" stroke-width="2" fill="none" filter="drop-shadow(0 0 8px #ff00ff)"/>
+        <path class="string-neon" d="M50 110 Q54 125 46 140 Q52 155 48 170 Q54 185 50 195 Q46 198 50 200" stroke="#00ffff" stroke-width="2" fill="none" filter="drop-shadow(0 0 8px #00ffff)"/>
+        <path class="string-neon" d="M110 98 Q106 113 114 128 Q108 143 112 158 Q106 173 110 185 Q114 188 110 190" stroke="#ffff00" stroke-width="2" fill="none" filter="drop-shadow(0 0 8px #ffff00)"/>
+        <path class="string-neon" d="M30 162 Q34 177 26 192 Q32 207 28 222 Q34 237 30 250 Q26 255 30 260" stroke="#00ff88" stroke-width="2" fill="none" filter="drop-shadow(0 0 8px #00ff88)"/>
+        <path class="string-neon" d="M520 124 Q516 139 524 154 Q518 169 522 184 Q516 199 520 210 Q524 215 520 220" stroke="#ff3366" stroke-width="2" fill="none" filter="drop-shadow(0 0 8px #ff3366)"/>
+        <path class="string-neon" d="M550 149 Q554 164 546 179 Q552 194 548 209 Q554 224 550 235 Q546 238 550 240" stroke="#9966ff" stroke-width="2" fill="none" filter="drop-shadow(0 0 8px #9966ff)"/>
+        <path class="string-neon" d="M480 101 Q476 116 484 131 Q478 146 482 161 Q476 176 480 190 Q484 195 480 200" stroke="#00ffaa" stroke-width="2" fill="none" filter="drop-shadow(0 0 8px #00ffaa)"/>
+        <path class="string-neon" d="M570 107 Q574 122 566 137 Q572 152 568 167 Q574 182 570 195 Q566 198 570 200" stroke="#ffaa00" stroke-width="2" fill="none" filter="drop-shadow(0 0 8px #ffaa00)"/>
+        
+        <!-- Globos flotantes -->
+        <g class="balloons">
+          <!-- Globos del lado izquierdo -->
+          <!-- Globo 1 -->
+          <circle class="neon-line balloon balloon1" cx="80" cy="120" r="25" fill="none" stroke="#ff00ff" stroke-width="2"/>
+          <circle class="balloon-highlight balloon1" cx="75" cy="110" r="8" fill="#ff00ff" opacity="0.3"/>
+          <path class="neon-line balloon1" d="M80 145 Q82 155 78 165 Q84 175 80 185 Q76 195 80 200" stroke="#ff00ff" stroke-width="2" fill="none"/>
+          
+          <!-- Globo 2 -->
+          <circle class="neon-line balloon balloon2" cx="50" cy="90" r="20" fill="none" stroke="#00ffff" stroke-width="2"/>
+          <circle class="balloon-highlight balloon2" cx="46" cy="83" r="6" fill="#00ffff" opacity="0.3"/>
+          <path class="neon-line balloon2" d="M50 110 Q52 120 48 130 Q54 140 50 150" stroke="#00ffff" stroke-width="2" fill="none"/>
+          
+          <!-- Globo 3 -->
+          <circle class="neon-line balloon balloon3" cx="110" cy="80" r="18" fill="none" stroke="#ffff00" stroke-width="2"/>
+          <circle class="balloon-highlight balloon3" cx="107" cy="74" r="5" fill="#ffff00" opacity="0.3"/>
+          <path class="neon-line balloon3" d="M110 98 Q108 108 112 118 Q106 128 110 138" stroke="#ffff00" stroke-width="2" fill="none"/>
+          
+          <!-- Globo 4 -->
+          <circle class="neon-line balloon balloon4" cx="30" cy="140" r="22" fill="none" stroke="#00ff88" stroke-width="2"/>
+          <circle class="balloon-highlight balloon4" cx="26" cy="132" r="7" fill="#00ff88" opacity="0.3"/>
+          <path class="neon-line balloon4" d="M30 162 Q28 172 32 182 Q26 192 30 202 Q34 212 30 220" stroke="#00ff88" stroke-width="2" fill="none"/>
+          
+          <!-- Globos del lado derecho -->
+          <!-- Globo 5 -->
+          <circle class="neon-line balloon balloon5" cx="520" cy="100" r="24" fill="none" stroke="#ff3366" stroke-width="2"/>
+          <circle class="balloon-highlight balloon5" cx="516" cy="92" r="7" fill="#ff3366" opacity="0.3"/>
+          <path class="neon-line balloon5" d="M520 124 Q522 134 518 144 Q524 154 520 164 Q516 174 520 180" stroke="#ff3366" stroke-width="2" fill="none"/>
+          
+          <!-- Globo 6 -->
+          <circle class="neon-line balloon balloon6" cx="550" cy="130" r="19" fill="none" stroke="#9966ff" stroke-width="2"/>
+          <circle class="balloon-highlight balloon6" cx="547" cy="124" r="5" fill="#9966ff" opacity="0.3"/>
+          <path class="neon-line balloon6" d="M550 149 Q548 159 552 169 Q546 179 550 189" stroke="#9966ff" stroke-width="2" fill="none"/>
+          
+          <!-- Globo 7 -->
+          <circle class="neon-line balloon balloon7" cx="480" cy="80" r="21" fill="none" stroke="#00ffaa" stroke-width="2"/>
+          <circle class="balloon-highlight balloon7" cx="477" cy="73" r="6" fill="#00ffaa" opacity="0.3"/>
+          <path class="neon-line balloon7" d="M480 101 Q482 111 478 121 Q484 131 480 141 Q476 151 480 160" stroke="#00ffaa" stroke-width="2" fill="none"/>
+          
+          <!-- Globo 8 -->
+          <circle class="neon-line balloon balloon8" cx="570" cy="90" r="17" fill="none" stroke="#ffaa00" stroke-width="2"/>
+          <circle class="balloon-highlight balloon8" cx="568" cy="85" r="4" fill="#ffaa00" opacity="0.3"/>
+          <path class="neon-line balloon8" d="M570 107 Q568 117 572 127 Q566 137 570 145" stroke="#ffaa00" stroke-width="2" fill="none"/>
+        </g>
+        
+        <!-- Base del pastel -->
+        <path class="neon-line cake-base" d="M150 320 L450 320 Q470 320 470 300 L470 280 Q470 260 450 260 L150 260 Q130 260 130 280 L130 300 Q130 320 150 320 Z"/>
+        <path class="neon-line cake-base" d="M140 270 Q150 265 160 270 T180 270 T200 270 T220 270 T240 270 T260 270 T280 270 T300 270 T320 270 T340 270 T360 270 T380 270 T400 270 T420 270 T440 270 T460 270"/>
+        
+        <!-- Primera capa -->
+        <path class="neon-line cake-layer1" d="M170 260 L430 260 Q450 260 450 240 L450 220 Q450 200 430 200 L170 200 Q150 200 150 220 L150 240 Q150 260 170 260 Z"/>
+        <path class="neon-line cake-layer1" d="M160 210 Q170 205 180 210 T200 210 T220 210 T240 210 T260 210 T280 210 T300 210 T320 210 T340 210 T360 210 T380 210 T400 210 T420 210 T440 210"/>
+        
+        <!-- Segunda capa -->
+        <path class="neon-line cake-layer2" d="M190 200 L410 200 Q430 200 430 180 L430 160 Q430 140 410 140 L190 140 Q170 140 170 160 L170 180 Q170 200 190 200 Z"/>
+        <path class="neon-line cake-layer2" d="M180 150 Q190 145 200 150 T220 150 T240 150 T260 150 T280 150 T300 150 T320 150 T340 150 T360 150 T380 150 T400 150 T420 150"/>
+        
+        <!-- Velas -->
+        <g class="candles">
+          <!-- Vela 1 -->
+          <rect class="neon-line candle candle1" x="220" y="110" width="8" height="30" rx="4" fill="none"/>
+          <rect class="candle-body candle1" x="222" y="112" width="4" height="26" fill="#00ff88" opacity="0.2"/>
+          
+          <!-- Vela 2 -->
+          <rect class="neon-line candle candle2" x="260" y="110" width="8" height="30" rx="4" fill="none"/>
+          <rect class="candle-body candle2" x="262" y="112" width="4" height="26" fill="#00ff88" opacity="0.2"/>
+          
+          <!-- Vela 3 -->
+          <rect class="neon-line candle candle3" x="320" y="110" width="8" height="30" rx="4" fill="none"/>
+          <rect class="candle-body candle3" x="322" y="112" width="4" height="26" fill="#00ff88" opacity="0.2"/>
+          
+          <!-- Vela 4 -->
+          <rect class="neon-line candle candle4" x="360" y="110" width="8" height="30" rx="4" fill="none"/>
+          <rect class="candle-body candle4" x="362" y="112" width="4" height="26" fill="#00ff88" opacity="0.2"/>
+        </g>
+        
+        <!-- Llamas -->
+        <path class="flame flame1" d="M224 105 Q218 95 224 85 Q230 95 224 105 Z"/>
+        <path class="flame flame2" d="M264 105 Q258 95 264 85 Q270 95 264 105 Z"/>
+        <path class="flame flame3" d="M324 105 Q318 95 324 85 Q330 95 324 105 Z"/>
+        <path class="flame flame4" d="M364 105 Q358 95 364 85 Q370 95 364 105 Z"/>
+        
+        <!-- Decoraciones adicionales del pastel -->
+        <g class="decorations">
+          <!-- Cerezas decorativas -->
+          <circle class="neon-line decoration" cx="200" cy="180" r="4" fill="none" stroke="#ff0066"/>
+          <circle class="neon-line decoration" cx="400" cy="180" r="4" fill="none" stroke="#ff0066"/>
+          <circle class="neon-line decoration" cx="300" cy="240" r="4" fill="none" stroke="#ff0066"/>
+          
+          <!-- Líneas decorativas laterales -->
+          <line class="neon-line decoration" x1="150" y1="230" x2="450" y2="230" stroke-width="1"/>
+          <line class="neon-line decoration" x1="170" y1="170" x2="430" y2="170" stroke-width="1"/>
+        </g>
+      </svg>
+    </div>
+    
+    <p class="message">¡Que todos tus deseos se hagan realidad! ✨</p>
+    <p class="message">¡Disfruta de tu día especial! 🎈</p>
   </div>
 </body>
 </html>
