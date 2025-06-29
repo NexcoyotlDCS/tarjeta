@@ -681,6 +681,8 @@
     .photo-frame:nth-child(4) { animation-delay: 11.6s; }
     .photo-frame:nth-child(5) { animation-delay: 11.8s; }
     .photo-frame:nth-child(6) { animation-delay: 12s; }
+    .photo-frame:nth-child(7) { animation-delay: 12.2s; }
+    .photo-frame:nth-child(8) { animation-delay: 12.4s; }
 
     @keyframes fadeInPhoto {
       to {
@@ -1254,6 +1256,9 @@
       </svg>
     </div>
     
+    <p class="message">¡Que todos tus deseos se hagan realidad! ✨</p>
+    <p class="message">¡Disfruta de tu día especial! 🎈</p>
+
     <!-- GALERÍA DE FOTOS ZIGZAG -->
     <div class="photo-gallery">
       <div class="photos-container">
@@ -1292,11 +1297,20 @@
           <img src="foto6.jpg" alt="Momento especial 6" class="birthday-photo" onerror="this.src='https://picsum.photos/300/200?random=6'">
           <div class="photo-glow"></div>
         </div>
+
+        <!-- Foto 7 -->
+        <div class="photo-frame">
+          <img src="foto7.jpg" alt="Momento especial 7" class="birthday-photo" onerror="this.src='https://picsum.photos/300/200?random=7'">
+          <div class="photo-glow"></div>
+        </div>
+
+        <!-- Foto 8 -->
+        <div class="photo-frame">
+          <img src="foto8.jpg" alt="Momento especial 8" class="birthday-photo" onerror="this.src='https://picsum.photos/300/200?random=8'">
+          <div class="photo-glow"></div>
+        </div>
       </div>
     </div>
-
-    <p class="message">¡Que todos tus deseos se hagan realidad! ✨</p>
-    <p class="message">¡Disfruta de tu día especial! 🎈</p>
   </div>
 
   <!-- MODAL LIGHTBOX -->
@@ -1333,7 +1347,7 @@
 
       // Inicializar modal de fotos
       initPhotoModal();
-    });
+    }); // <-- Cierre correcto de la función DOMContentLoaded
 
     function initPhotoModal() {
       const modal = document.getElementById('photoModal');
@@ -1399,7 +1413,7 @@
           sparklesContainer.appendChild(sparkle);
         }
       }
-    }
+    } // <-- Cierre añadido para initPhotoModal
 
     function createStars() {
       const starsContainer = document.querySelector('.stars');
