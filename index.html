@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarjeta protegida</title>
+  <link rel="stylesheet" href="estilos.css" />
+  <script>
+    const clave = prompt("Introduce la contraseña para ver la tarjeta:");
+    const claveCorrecta = "miClave123"; // 🔒 Cambia esta contraseña
+
+    if (clave !== claveCorrecta) {
+      document.body.innerHTML = "<h2>Acceso denegado</h2><p>Contraseña incorrecta.</p>";
+    }
+  </script>
+</head>
+<body>
+  <div class="tarjeta">
+    <img src="https://via.placeholder.com/300x200" alt="Imagen principal" class="imagen" />
+    <h1>¡Hola!</h1>
+    <p>Esta es una tarjeta especial protegida por contraseña.</p>
+    <img src="https://via.placeholder.com/100x100" alt="Decoración" class="decoracion" />
+  </div>
+</body>
+</html>
