@@ -348,7 +348,7 @@ body {
    ========================================== */
 
 .message {
-  margin-top: var(--espacio-lg);
+  margin-top: var(--espacio-sm);
   font-size: clamp(1rem, 3vw, 1.8rem);
   font-family: var(--fuente-principal);
   font-weight: 500;
